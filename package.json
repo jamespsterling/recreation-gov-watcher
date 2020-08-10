@@ -1,0 +1,17 @@
+{
+  "name": "recreation-gov-watcher",
+  "version": "1.0.0",
+  "description": "NodeJS watcher for Recreation.gov",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Sterling",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/webhook": "^5.0.3",
+    "dotenv": "^8.2.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  }
+}
