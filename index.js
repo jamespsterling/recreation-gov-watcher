@@ -5,8 +5,8 @@ require('dotenv').config();
 const baseUrl = 'https://www.recreation.gov';
 const slackUrl = process.env.SLACK_WEBHOOK_URL;
 const campgroundId = 232464;
-const availDate = '2020-09-15T00:00:00Z';
-const startDate = '2020-09-01T00:00:00.000Z'; // 2020-09-01T00%3A00%3A00.000Z
+const availDate = '2020-09-11T00:00:00Z';
+const startDate = '2020-09-01T00:00:00.000Z';
 
 
 /**
@@ -54,8 +54,8 @@ exports.checkSites = (event, context) => {
               const webhook = new IncomingWebhook(slackUrl);
 
               webhook.send({
-                text: `Campsite ${d.campsites[site].site} available for ${availDate.substr(0, 10)} at 
-                  ${c.campground.facility_name} ${baseUrl}/camping/campsites/${d.campsites[site].campsite_id}`,
+                text: `Campsite <${baseUrl}/camping/campsites/${d.campsites[site].campsite_id}|${d.campsites[site].site}> ` + 
+                      `available on ${availDate.substr(0, 10)} at ${c.campground.facility_name}`,
               });
             }
           }
