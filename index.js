@@ -63,4 +63,4 @@ exports.checkSites = (event, context) => {
       });
 };
 
-this.checkSites();
+// this.checkSites();
